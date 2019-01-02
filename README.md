@@ -28,6 +28,10 @@ Arquivos fonte para a apresentação, escritos em markdown ([Pandoc's Markdown](
 
 Imagens utilizadas na apresentação.
 
+- reveal.js/
+
+Arquivos da biblioteca [reveal.js](https://revealjs.com/). Essa é a dependência principal do projeto, os arquivos foram incluídos no repositório por questão de praticidade.
+
 - Makefile
 
 Arquivo para automatizar a compilação dos fontes.
@@ -35,8 +39,7 @@ Arquivo para automatizar a compilação dos fontes.
 ### Dependências para desenvolvimento
 
 - [Reveal.js](https://revealjs.com/)
-  - A biblioteca reveal.js é necessária para funcionamento da apresentação. O release utilizado para o desenvolvimento foi o 3.7.
-   Extraia o arquivo '.zip' e inclua a pasta dentro do projeto renomeando-a para 'reveal.js'.
+  - A biblioteca reveal.js é necessária para funcionamento da apresentação. O release utilizado para o desenvolvimento foi o 3.7 (já incluído no projeto).
 - [Pandoc](https://pandoc.org/)
   - É necessário que o pandoc esteja instalado na máquina para  realizar a conversão dos arquivos markdown para html compatível com o reveal.js.
 - [GNU make]
