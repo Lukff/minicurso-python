@@ -21,21 +21,26 @@ As seções seguintes explicam o funcionamento do projeto.
 ### Estrutura
 
 - markdown/
+
 Arquivos fonte para a apresentação, escritos em markdown ([Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)).
+
 - img/
+
 Imagens utilizadas na apresentação.
+
 - Makefile
+
 Arquivo para automatizar a compilação dos fontes.
 
 ### Dependências para desenvolvimento
 
 - [Reveal.js](https://revealjs.com/)
- - A biblioteca reveal.js é necessária para funcionamento da apresentação. O release utilizado para o desenvolvimento foi o 3.7.
+  - A biblioteca reveal.js é necessária para funcionamento da apresentação. O release utilizado para o desenvolvimento foi o 3.7.
    Extraia o arquivo '.zip' e inclua a pasta dentro do projeto renomeando-a para 'reveal.js'.
 - [Pandoc](https://pandoc.org/)
- - É necessário que o pandoc esteja instalado na máquina para  realizar a conversão dos arquivos markdown para html compatível com o reveal.js.
+  - É necessário que o pandoc esteja instalado na máquina para  realizar a conversão dos arquivos markdown para html compatível com o reveal.js.
 - [GNU make]
- - É necessário que o make estaja instalado na máquina para utilizar o 'Makefile'.
+  - É necessário que o make estaja instalado na máquina para utilizar o 'Makefile'.
 
 ### Instruções
 
