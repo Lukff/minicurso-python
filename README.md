@@ -1,6 +1,6 @@
 # Minicurso Python
 
-Arquivos fonte para a apresentação de um minicurso de Python ministrado para os membros do Ramo Estudantil IEEE CEFET/RJ durante os dias 30 e 31 de janeiro; e 01 de fevereiro de 2019.
+Arquivos fonte para a apresentação de um minicurso de Python ministrado para os membros do [Ramo Estudantil IEEE CEFET/RJ](https://www.facebook.com/ramocefet/) durante os dias 30 e 31 de janeiro; e 01 de fevereiro de 2019.
 
 ## Visualização
 
