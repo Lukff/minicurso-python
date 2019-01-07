@@ -42,7 +42,7 @@ Arquivo para automatizar a compilação dos fontes.
   - A biblioteca reveal.js é necessária para funcionamento da apresentação. O release utilizado para o desenvolvimento foi o 3.7 (já incluído no projeto).
 - [Pandoc](https://pandoc.org/)
   - É necessário que o pandoc esteja instalado na máquina para  realizar a conversão dos arquivos markdown para html compatível com o reveal.js.
-- [GNU make]
+- [GNU make](https://www.gnu.org/software/make/)
   - É necessário que o make estaja instalado na máquina para utilizar o 'Makefile'.
 
 ### Instruções
