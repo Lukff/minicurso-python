@@ -12,7 +12,7 @@ function serve() {
     });
 
     gulp.watch('src/markdown/*.md', gulp.series(genPages));
-    gulp.watch(['index.html', 'pages/*.html'], browserSync.reload);
+    // gulp.watch(['index.html', 'pages/*.html'], browserSync.reload);
 
 }
 
@@ -25,7 +25,8 @@ function genPages() {
             args: ['-i', '--slide-level=2', '-V', 'theme=solarized',
                 '-V', 'revealjs-url=https://revealjs.com', '-s']
         }))
-        .pipe(gulp.dest('pages'));
+        .pipe(gulp.dest('pages'))
+        .pipe(browserSync.stream());
 }
 
 function clean() {
