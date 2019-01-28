@@ -101,18 +101,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <p class="date">Janeiro, 2019</p>
 </section>
 
-<section><section id="apresentação" class="title-slide slide level1"><h1>Apresentação</h1></section><section id="ministrante" class="slide level2">
-<h2>Ministrante</h2>
+<section><section id="apresentação" class="title-slide slide level1"><h1>Apresentação</h1></section><section id="quem-sou-eu" class="slide level2">
+<h2>Quem sou eu</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
-<p><img data-src="img/profile.jpg" alt="Lucas Fernandes" /> Lucas Fernandes</p>
-</div><div class="column" style="width:10%;">
+<div class="column" style="width:25%;">
+<p><img data-src="../img/profile.jpg" alt="Lucas Fernandes" /> Lucas Fernandes</p>
+</div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:60%;">
+</div><div class="column" style="width:70%;">
 <ul>
-<li class="fragment">Aluno de Engenharia Eletrônica no CEFET/RJ;</li>
-<li class="fragment">Membro do Ramo Estudantil IEEE CEFET/RJ (2015 - 2018);</li>
-<li class="fragment">Professor no INCARE (2018 - presente).</li>
+<li class="fragment">Aluno de Engenharia Eletrônica no CEFET/RJ</li>
+<li class="fragment">Membro do Ramo Estudantil IEEE CEFET/RJ (2015 - 2018)</li>
+<li class="fragment">Professor na Toti (2018 - presente)</li>
 </ul>
 </div>
 </div>
@@ -121,24 +121,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </aside>
 </section><section id="programação-linguagens-python" class="slide level2">
 <h2>Programação / Linguagens / Python</h2>
-</section><section id="material-ferramentas" class="slide level2">
-<h2>Material / Ferramentas</h2>
+</section><section id="material" class="slide level2">
+<h2>Material</h2>
 <ul>
-<li class="fragment">Arquivos
+<li class="fragment">GitHub
 <ul>
-<li class="fragment">GitHub: https://github.com/Lukff/minicurso-python</li>
+<li class="fragment">github.com/lukff/minicurso-python</li>
 </ul></li>
-<li class="fragment">IDLE</li>
 </ul>
 </section></section>
-<section><section id="interpretador-interativo" class="title-slide slide level1"><h1>Interpretador Interativo</h1></section><section id="repl" class="slide level2">
-<h2>REPL</h2>
+<section><section id="interpretador-interativo" class="title-slide slide level1"><h1>Interpretador Interativo</h1></section><section id="idle-repl" class="slide level2">
+<h2>IDLE ( REPL )</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<figure>
+<img data-src="../img/idle.png" alt="IDLE" /><figcaption>IDLE</figcaption>
+</figure>
+</div><div class="column" style="width:40%;">
 <ul>
 <li class="fragment">Read</li>
 <li class="fragment">Eval</li>
 <li class="fragment">Print</li>
 <li class="fragment">Loop</li>
 </ul>
+</div>
+</div>
 </section><section id="dados-e-operações" class="slide level2">
 <h2>Dados e Operações</h2>
 <ul>
@@ -160,12 +167,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>“calculadora”</li>
 </ul>
 </aside>
-</section></section>
-<section><section id="variáveis" class="title-slide slide level1"><h1>Variáveis</h1></section><section id="atribuição" class="slide level2">
-<h2>Atribuição</h2>
+</section><section id="variáveis" class="slide level2">
+<h2>Variáveis</h2>
+<ul>
+<li class="fragment">Atribuição
 <ul>
 <li class="fragment">simples (=)</li>
 <li class="fragment">com operação (+=, -=, *=, /=)</li>
+</ul></li>
 </ul>
 <div class="fragment">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="op">&gt;&gt;&gt;</span> caixa <span class="op">=</span> <span class="dv">300</span></a>
@@ -212,52 +221,197 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb3-4" title="4"><span class="bu">print</span>(<span class="st">&quot;Olá, &quot;</span> <span class="op">+</span> nome) <span class="co"># imprime seguido do valor armazenado</span></a></code></pre></div>
 </div>
 </section></section>
-<section><section id="execução-condicional" class="title-slide slide level1"><h1>Execução Condicional</h1></section><section id="valores-booleanos" class="slide level2">
-<h2>Valores Booleanos</h2>
+<section><section id="execução-condicional" class="title-slide slide level1"><h1>Execução Condicional</h1></section><section id="valores-lógicos" class="slide level2">
+<h2>Valores Lógicos</h2>
 <ul>
 <li class="fragment">True (verdadeiro)</li>
 <li class="fragment">False (falso)</li>
 </ul>
+<div class="fragment">
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" title="1"><span class="op">&gt;&gt;&gt;</span> <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">3</span></a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="va">True</span></a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="op">&gt;&gt;&gt;</span> <span class="dv">10</span> <span class="op">&lt;</span> <span class="dv">3</span></a>
 <a class="sourceLine" id="cb4-4" title="4"><span class="va">False</span></a></code></pre></div>
-</section><section id="operadores-booleanos" class="slide level2">
-<h2>Operadores Booleanos</h2>
+</div>
+</section><section id="operadores-lógicos" class="slide level2">
+<h2>Operadores Lógicos</h2>
 <ul>
-<li class="fragment">Comparação
+<li class="fragment">Comparação de valores
 <ul>
 <li class="fragment">maior que (&gt;)</li>
 <li class="fragment">menor que (&lt;)</li>
 <li class="fragment">igual a (==)</li>
 <li class="fragment">maior ou igual a (&gt;=)</li>
-<li class="fragment">menor ou igual que (&lt;=)</li>
+<li class="fragment">menor ou igual a (&lt;=)</li>
 </ul></li>
-<li class="fragment">Lógicos
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li class="fragment">Combinação de expressões lógicas
 <ul>
 <li class="fragment">e (and)</li>
 <li class="fragment">ou (or)</li>
 <li class="fragment">negação (not)</li>
 </ul></li>
 </ul>
+<div class="fragment">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1"><span class="op">&gt;&gt;&gt;</span> <span class="dv">10</span> <span class="op">&lt;</span> <span class="dv">3</span> <span class="kw">or</span> <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="va">True</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="op">&gt;&gt;&gt;</span> <span class="dv">10</span> <span class="op">&lt;</span> <span class="dv">3</span> <span class="kw">and</span> <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="va">False</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="op">&gt;&gt;&gt;</span> <span class="kw">not</span> <span class="va">True</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="va">False</span></a></code></pre></div>
+</div>
 </section><section id="if-se" class="slide level2">
 <h2>if (se)</h2>
 <ul>
-<li class="fragment">executar um trecho somente se uma expressão for verdadeira</li>
+<li class="fragment">Execute um trecho somente se uma expressão for verdadeira</li>
 </ul>
-<p>~~~~~ {.python}</p>
-<p>~~~~</p>
+<div class="fragment">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1">senha <span class="op">=</span> <span class="st">&quot;abc123&quot;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">entrada <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Digite a senha: &quot;</span>)</a>
+<a class="sourceLine" id="cb6-3" title="3"></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="cf">if</span> (entrada <span class="op">==</span> senha):</a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="bu">print</span>(<span class="st">&quot;Acesso garantido!&quot;</span>)</a></code></pre></div>
+</div>
 </section><section id="else-senão" class="slide level2">
 <h2>else (senão)</h2>
+<ul>
+<li class="fragment">Execute um trecho caso a expressão ‘if’ anterior seja falsa</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" title="1">senha <span class="op">=</span> <span class="st">&quot;abc123&quot;</span></a>
+<a class="sourceLine" id="cb7-2" title="2">entrada <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Digite a senha: &quot;</span>)</a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="cf">if</span> (entrada <span class="op">==</span> senha):</a>
+<a class="sourceLine" id="cb7-5" title="5">  <span class="bu">print</span>(<span class="st">&quot;Acesso garantido!&quot;</span>)</a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb7-7" title="7">  <span class="bu">print</span>(<span class="st">&quot;Acesso negado!&quot;</span>)</a></code></pre></div>
+</div>
 </section><section id="elif-else-if-senão-se" class="slide level2">
 <h2>elif (else if, senão se)</h2>
-</section><section id="estruturas-de-repetição" class="slide level2">
-<h2>Estruturas de Repetição</h2>
-<ul>
-<li class="fragment">while, for / range</li>
-<li class="fragment">break, continue</li>
-</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" title="1">senha <span class="op">=</span> <span class="st">&quot;abc123&quot;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">entrada <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Digite a senha: &quot;</span>)</a>
+<a class="sourceLine" id="cb8-3" title="3"></a>
+<a class="sourceLine" id="cb8-4" title="4"><span class="cf">if</span> (entrada <span class="op">==</span> senha):</a>
+<a class="sourceLine" id="cb8-5" title="5">  <span class="bu">print</span>(<span class="st">&quot;Acesso garantido!&quot;</span>)</a>
+<a class="sourceLine" id="cb8-6" title="6"><span class="cf">elif</span> (<span class="bu">input</span>(<span class="st">&quot;Última chance: &quot;</span>) <span class="op">==</span> senha)</a>
+<a class="sourceLine" id="cb8-7" title="7">  <span class="bu">print</span>(<span class="st">&quot;Acesso garantido!&quot;</span>)</a>
+<a class="sourceLine" id="cb8-8" title="8"><span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb8-9" title="9">  <span class="bu">print</span>(<span class="st">&quot;Acesso negado!&quot;</span>)</a></code></pre></div>
 </section></section>
+<section><section id="estruturas-de-repetição-loop" class="title-slide slide level1"><h1>Estruturas de Repetição (loop)</h1></section><section id="while-enquanto" class="slide level2">
+<h2>while (enquanto)</h2>
+<ul>
+<li class="fragment">Repita um trecho enquanto uma condição for verdadeira</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1">senha <span class="op">=</span> <span class="st">&quot;Eu sou a lei!&quot;</span></a>
+<a class="sourceLine" id="cb9-2" title="2">entrada <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Qual a senha? &quot;</span>)</a>
+<a class="sourceLine" id="cb9-3" title="3"></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="cf">while</span> (entrada <span class="op">!=</span> senha):</a>
+<a class="sourceLine" id="cb9-5" title="5">  <span class="bu">print</span>(<span class="st">&quot;Incorreto! Preso em nome da lei!&quot;</span>)</a>
+<a class="sourceLine" id="cb9-6" title="6"></a>
+<a class="sourceLine" id="cb9-7" title="7">  entrada <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Senha? &quot;</span>)</a>
+<a class="sourceLine" id="cb9-8" title="8"></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="bu">print</span>(<span class="st">&quot;Aprovado! Desculpe pelo incômodo&quot;</span>)</a></code></pre></div>
+</div>
+</section><section id="for-in-para-em" class="slide level2">
+<h2>for in (para em)</h2>
+<ul>
+<li class="fragment">Execute um trecho para cada elemento em uma sequência</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="cf">for</span> numero <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">20</span>]:</a>
+<a class="sourceLine" id="cb10-2" title="2">  <span class="cf">if</span> (numero <span class="op">&gt;</span> <span class="dv">10</span>):</a>
+<a class="sourceLine" id="cb10-3" title="3">    <span class="bu">print</span>(numero <span class="op">+</span> <span class="st">&quot;está bom&quot;</span>)</a>
+<a class="sourceLine" id="cb10-4" title="4">  <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb10-5" title="5">    <span class="bu">print</span>(numero <span class="op">+</span> <span class="st">&quot;é pequeno demais&quot;</span>)</a></code></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" title="1"><span class="co"># soletrar</span></a>
+<a class="sourceLine" id="cb11-2" title="2">palavra <span class="op">=</span> <span class="st">&quot;casa&quot;</span></a>
+<a class="sourceLine" id="cb11-3" title="3"></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="cf">for</span> letra <span class="kw">in</span> palavra:</a>
+<a class="sourceLine" id="cb11-5" title="5">  <span class="bu">print</span>(letra)</a></code></pre></div>
+</div>
+</section><section id="range" class="slide level2">
+<h2>range</h2>
+<ul>
+<li class="fragment">Crie uma sequência de números</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># exibir números de 1 a 10</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</a>
+<a class="sourceLine" id="cb12-3" title="3">  <span class="bu">print</span>(num <span class="op">+</span> <span class="dv">1</span>)</a></code></pre></div>
+</div>
+</section></section>
+<section><section id="alterando-a-execução-de-um-loop" class="title-slide slide level1"><h1>Alterando a execução de um loop</h1></section><section id="break" class="slide level2">
+<h2>break</h2>
+<ul>
+<li class="fragment">Saia da estrutura de repetição atual</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="cf">while</span> (<span class="va">True</span>):</a>
+<a class="sourceLine" id="cb13-2" title="2">  <span class="cf">if</span> <span class="bu">input</span>(<span class="st">&quot;Qual é meu nome? &quot;</span>) <span class="op">==</span> <span class="st">&quot;Rumpelstiltskin&quot;</span>:</a>
+<a class="sourceLine" id="cb13-3" title="3">    <span class="cf">break</span></a>
+<a class="sourceLine" id="cb13-4" title="4">  <span class="bu">print</span>(<span class="st">&quot;Errado&quot;</span>)</a>
+<a class="sourceLine" id="cb13-5" title="5"></a>
+<a class="sourceLine" id="cb13-6" title="6"><span class="bu">print</span>(<span class="st">&quot;IM-POS-SÍ-VEL!!!&quot;</span>)</a></code></pre></div>
+</div>
+</section><section id="continue" class="slide level2">
+<h2>continue</h2>
+<ul>
+<li class="fragment">Prossiga para a próxima iteração da estrutura de repetição atual</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1"><span class="co"># imprimir numeros não divisiveis por 3</span></a>
+<a class="sourceLine" id="cb14-2" title="2"></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</a>
+<a class="sourceLine" id="cb14-4" title="4">  <span class="cf">if</span> (num<span class="op">+</span><span class="dv">1</span>) <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb14-5" title="5">    <span class="cf">continue</span></a>
+<a class="sourceLine" id="cb14-6" title="6">  <span class="bu">print</span>(num<span class="op">+</span><span class="dv">1</span>)</a></code></pre></div>
+</div>
+</section></section>
+<section><section id="funções" class="title-slide slide level1"><h1>Funções</h1></section><section id="def-definir-uma-função" class="slide level2">
+<h2>def (Definir uma função)</h2>
+<ul>
+<li class="fragment">Trecho de código que pode ser repetido e retornar valores</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">def</span> soma(a, b):</a>
+<a class="sourceLine" id="cb15-2" title="2">  <span class="cf">return</span> a <span class="op">+</span> b</a>
+<a class="sourceLine" id="cb15-3" title="3"></a>
+<a class="sourceLine" id="cb15-4" title="4">total <span class="op">=</span> soma(<span class="dv">3</span>, <span class="dv">5</span>)</a></code></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">def</span> saudacao(nome):</a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="bu">print</span>(<span class="st">&quot;Olá, &quot;</span> <span class="op">+</span> nome)<span class="op">;</span></a></code></pre></div>
+</div>
+</section><section id="documentação-de-funções" class="slide level2">
+<h2>documentação de funções</h2>
+<ul>
+<li class="fragment"><strong>help</strong> (ver uma documentação no modo interativo)</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="op">&gt;&gt;&gt;</span> <span class="bu">help</span>(<span class="bu">input</span>)</a></code></pre></div>
+</div>
+</section><section class="slide level2">
+
+<ul>
+<li class="fragment"><strong>docstrings</strong>
+<ul>
+<li class="fragment">(""" """) aspas triplas</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">def</span> soma(a, b):</a>
+<a class="sourceLine" id="cb18-2" title="2">  <span class="co">&quot;&quot;&quot;Retorna a soma de dois números.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb18-3" title="3">  <span class="cf">return</span> a <span class="op">+</span> b</a></code></pre></div>
+</div>
+</section></section>
+<section id="dúvidas" class="title-slide slide level1"><h1>Dúvidas?</h1></section>
     </div>
   </div>
 
