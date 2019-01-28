@@ -4,6 +4,8 @@ Arquivos fonte para a apresentação de um minicurso de Python ministrado para o
 
 ## Visualização
 
+A apresentação pode ser [visualizada online](https://lukff.github.io/minicurso-python/).
+
 Se deseja baixar a apresentação:
 - Obtenha a versão mais recente na página de [releases](https://github.com/Lukff/minicurso-python/releases);
 - Extraia o arquivo '.zip';
