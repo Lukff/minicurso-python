@@ -7,11 +7,12 @@ function serve() {
     browserSync({
         server: {
             baseDir: './'
-        }
+        },
+        browser: "firefox"
     });
 
     gulp.watch('src/markdown/*.md', gulp.series(genPages));
-    gulp.watch('pages/*.html', browserSync.reload);
+    gulp.watch(['index.html', 'pages/*.html'], browserSync.reload);
 
 }
 
@@ -28,9 +29,9 @@ function genPages() {
 }
 
 function clean() {
-    return del(['pages']);
+    return del('pages');
 }
 
 exports.build = gulp.series(clean, genPages);
 exports.clean = gulp.series(clean);
-exports.default = gulp.series(serve);
+exports.default = gulp.series(clean, genPages, serve);
