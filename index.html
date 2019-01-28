@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de apresentações</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat"
+  rel="stylesheet">
+  <style>
+body {
+  margin: 0;
+  height: 800px; /* fallback */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fdf6e3;
+  color: #657b83;
+  
+  font-size: 180%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  color: #586e75;
+}
+
+body > * {
+  width: 85%;
+}
+
+header {
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  max-width: 920px;
+}
+
+ul a {
+  text-decoration: none;
+  color: #657b83;
+}
+
+@media (max-height: 400px) {
+  body { font-size: 140%; }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Minicurso Python</h1>
+    <p>Ramo IEEE CEFET/RJ<br>
+      Lucas Fernandes<br>
+    Janeiro, 2019</p>
+  </header>
+  <ul>
+    <li><a href="pages/01.html">01</a></li>
+    <li><a href="pages/02.html">02</a></li>
+    <li><a href="pages/03.html">03</a></li>
+  </ul>
+</body>
+</html>
