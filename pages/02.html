@@ -98,7 +98,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="title-slide">
   <h1 class="title">Python</h1>
   <p class="author">Lucas Fernandes</p>
-  <p class="date">Janeiro, 2019</p>
+  <p class="date">31 de Janeiro, 2019</p>
 </section>
 
 <section><section id="tipos-de-dados" class="title-slide slide level1"><h1>Tipos de Dados</h1></section><section id="tudo-é-um-objeto" class="slide level2">
@@ -359,33 +359,262 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb11-17" title="17">{<span class="dv">42</span>}</a>
 <a class="sourceLine" id="cb11-18" title="18"><span class="op">&gt;&gt;&gt;</span> a <span class="op">-</span> b <span class="co"># diferença entre a e b</span></a>
 <a class="sourceLine" id="cb11-19" title="19">{<span class="dv">1</span>, <span class="dv">2</span>}</a></code></pre></div>
+</section><section id="compreensões" class="slide level2">
+<h2>Compreensões</h2>
+<ul>
+<li class="fragment">Criação de listas a partir de um loop</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="co"># compreensão de lista</span></a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="op">&gt;&gt;&gt;</span> [i<span class="op">%</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>)]</a>
+<a class="sourceLine" id="cb12-3" title="3">[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb12-4" title="4"></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="co"># compreensão de dicionário</span></a>
+<a class="sourceLine" id="cb12-6" title="6"><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> [(<span class="st">&#39;a&#39;</span>,<span class="dv">1</span>), (<span class="st">&#39;b&#39;</span>,<span class="dv">2</span>), (<span class="st">&#39;c&#39;</span>,<span class="dv">3</span>), (<span class="st">&#39;d&#39;</span>,<span class="dv">4</span>)]</a>
+<a class="sourceLine" id="cb12-7" title="7"><span class="op">&gt;&gt;&gt;</span> {k:v <span class="cf">for</span> k,v <span class="kw">in</span> a}</a>
+<a class="sourceLine" id="cb12-8" title="8">{<span class="st">&#39;a&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;b&#39;</span>: <span class="dv">2</span>, <span class="st">&#39;c&#39;</span>: <span class="dv">3</span>, <span class="st">&#39;d&#39;</span>: <span class="dv">4</span>}</a>
+<a class="sourceLine" id="cb12-9" title="9"></a>
+<a class="sourceLine" id="cb12-10" title="10"><span class="co"># compreensão de conjunto (set)</span></a>
+<a class="sourceLine" id="cb12-11" title="11"><span class="op">&gt;&gt;&gt;</span> {l <span class="cf">for</span> l <span class="kw">in</span> <span class="st">&#39;hello&#39;</span>}</a>
+<a class="sourceLine" id="cb12-12" title="12">{<span class="st">&#39;e&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;l&#39;</span>, <span class="st">&#39;o&#39;</span>}</a></code></pre></div>
+</div>
 </section></section>
-<section id="compreensões" class="title-slide slide level1"><h1>Compreensões</h1></section>
 <section><section id="funções" class="title-slide slide level1"><h1>Funções</h1></section><section id="revisão" class="slide level2">
 <h2>Revisão</h2>
 <ul>
 <li class="fragment"><strong>def</strong> define uma nova função</li>
-<li class="fragment"><strong>return</strong> retorna um valor da função</li>
+<li class="fragment"><strong>return</strong> retorna um valor a partir da função</li>
 </ul>
-</section><section id="argumentos" class="slide level2">
-<h2>Argumentos</h2>
+</section><section id="escopo-e-objetos-mutáveis" class="slide level2">
+<h2>Escopo e objetos mutáveis</h2>
+<ul>
+<li class="fragment">A alteração de membros de sequências mutáveis feita no interior de uma função é refletida no objeto original</li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1">s <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="kw">def</span> inverte_seq(seq):</a>
+<a class="sourceLine" id="cb13-3" title="3">    seq.reverse()</a>
+<a class="sourceLine" id="cb13-4" title="4">    <span class="bu">print</span>(seq)</a>
+<a class="sourceLine" id="cb13-5" title="5"></a>
+<a class="sourceLine" id="cb13-6" title="6">inverte_seq(s) <span class="co">## [4, 3, 2, 1]</span></a>
+<a class="sourceLine" id="cb13-7" title="7"><span class="bu">print</span>(s)       <span class="co">## [4, 3, 2, 1]</span></a></code></pre></div>
+</section><section id="tipos-de-argumentos" class="slide level2">
+<h2>Tipos de argumentos</h2>
 <ul>
 <li class="fragment">posicionais</li>
 <li class="fragment">palavra-chave / valor padrão</li>
 <li class="fragment">posicionais variáveis</li>
 <li class="fragment">palavras-chave variáveis</li>
-<li class="fragment"><p>apenas palavras-chave</p></li>
-<li class="fragment"><p>Funções anônimas</p></li>
+<li class="fragment">apenas palavras-chave</li>
 </ul>
-</section><section id="funções-úteis" class="slide level2">
-<h2>Funções úteis</h2>
+</section><section class="slide level2">
+
+<h3 id="argumentos-posicionais">Argumentos posicionais</h3>
 <ul>
-<li class="fragment">map</li>
-<li class="fragment">zip</li>
-<li class="fragment">filter</li>
+<li class="fragment">Devem ser chamados conforme a ordem disposta na declaração da função.</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">def</span> order(a, b, c, d):</a>
+<a class="sourceLine" id="cb14-2" title="2">    <span class="bu">print</span>(<span class="st">&#39;a: &#39;</span>, a)</a>
+<a class="sourceLine" id="cb14-3" title="3">    <span class="bu">print</span>(<span class="st">&#39;b: &#39;</span>, b)</a>
+<a class="sourceLine" id="cb14-4" title="4">    <span class="bu">print</span>(<span class="st">&#39;c: &#39;</span>, c)</a>
+<a class="sourceLine" id="cb14-5" title="5">    <span class="bu">print</span>(<span class="st">&#39;d: &#39;</span>, d)</a>
+<a class="sourceLine" id="cb14-6" title="6">          </a>
+<a class="sourceLine" id="cb14-7" title="7">order(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb14-8" title="8"><span class="co"># a:  1</span></a>
+<a class="sourceLine" id="cb14-9" title="9"><span class="co"># b:  2</span></a>
+<a class="sourceLine" id="cb14-10" title="10"><span class="co"># c:  3</span></a>
+<a class="sourceLine" id="cb14-11" title="11"><span class="co"># d:  4</span></a>
+<a class="sourceLine" id="cb14-12" title="12"></a>
+<a class="sourceLine" id="cb14-13" title="13">order(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb14-14" title="14"><span class="co"># a:  4</span></a>
+<a class="sourceLine" id="cb14-15" title="15"><span class="co"># b:  3</span></a>
+<a class="sourceLine" id="cb14-16" title="16"><span class="co"># c:  2</span></a>
+<a class="sourceLine" id="cb14-17" title="17"><span class="co"># d:  1</span></a></code></pre></div>
+</div>
+</section><section class="slide level2">
+
+<h3 id="passagem-de-argumentos-por-palavra-chave">Passagem de argumentos por palavra-chave</h3>
+<p>Atribuir valores aos argumentos através dos nomes</p>
+<ul>
+<li class="fragment"><strong>=</strong> é utilizado para dar valor aos argumentos na chamada de função</li>
+<li class="fragment">deve ser feita após a passagem de argumentos posicionais</li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">def</span> order(a, b, c, d):</a>
+<a class="sourceLine" id="cb15-2" title="2">    <span class="bu">print</span>(<span class="st">&#39;a:&#39;</span>, a)</a>
+<a class="sourceLine" id="cb15-3" title="3">    <span class="bu">print</span>(<span class="st">&#39;b:&#39;</span>, b)</a>
+<a class="sourceLine" id="cb15-4" title="4">    <span class="bu">print</span>(<span class="st">&#39;c:&#39;</span>, c)</a>
+<a class="sourceLine" id="cb15-5" title="5">    <span class="bu">print</span>(<span class="st">&#39;d:&#39;</span>, d)</a>
+<a class="sourceLine" id="cb15-6" title="6"></a>
+<a class="sourceLine" id="cb15-7" title="7">order(b<span class="op">=</span><span class="dv">1</span>,a<span class="op">=</span><span class="dv">3</span>,c<span class="op">=</span><span class="dv">2</span>,d<span class="op">=</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb15-8" title="8">a: <span class="dv">3</span></a>
+<a class="sourceLine" id="cb15-9" title="9">b: <span class="dv">1</span></a>
+<a class="sourceLine" id="cb15-10" title="10">c: <span class="dv">2</span></a>
+<a class="sourceLine" id="cb15-11" title="11">d: <span class="dv">4</span></a>
+<a class="sourceLine" id="cb15-12" title="12"></a>
+<a class="sourceLine" id="cb15-13" title="13">order(<span class="dv">2</span>,<span class="dv">3</span>,d<span class="op">=</span><span class="dv">1</span>,c<span class="op">=</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb15-14" title="14">a: <span class="dv">2</span></a>
+<a class="sourceLine" id="cb15-15" title="15">b: <span class="dv">3</span></a>
+<a class="sourceLine" id="cb15-16" title="16">c: <span class="dv">4</span></a>
+<a class="sourceLine" id="cb15-17" title="17">d: <span class="dv">1</span></a>
+<a class="sourceLine" id="cb15-18" title="18"></a>
+<a class="sourceLine" id="cb15-19" title="19">order(d<span class="op">=</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>) <span class="co"># errado</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="argumentos-com-valor-padrão">Argumentos com valor padrão</h3>
+<ul>
+<li class="fragment">Caso não seja fornecido o valor do argumento na chamada de função, assume um valor padrão</li>
+<li class="fragment"><strong>=</strong> usado para atribuir o valor padrão</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1"></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="kw">def</span> saudacao(nome<span class="op">=</span><span class="va">None</span>):</a>
+<a class="sourceLine" id="cb16-3" title="3">    <span class="cf">if</span> nome <span class="kw">is</span> <span class="va">None</span>:</a>
+<a class="sourceLine" id="cb16-4" title="4">        <span class="bu">print</span>(<span class="st">&#39;Olá!&#39;</span>)</a>
+<a class="sourceLine" id="cb16-5" title="5">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb16-6" title="6">        <span class="bu">print</span>(<span class="st">&#39;Olá,&#39;</span>, nome)</a>
+<a class="sourceLine" id="cb16-7" title="7">        </a>
+<a class="sourceLine" id="cb16-8" title="8">saudacao(<span class="st">&#39;Bob&#39;</span>)</a>
+<a class="sourceLine" id="cb16-9" title="9"><span class="co">## Olá, Bob</span></a>
+<a class="sourceLine" id="cb16-10" title="10">saudacao()</a>
+<a class="sourceLine" id="cb16-11" title="11"><span class="co">## Olá!</span></a></code></pre></div>
+</div>
+</section><section id="argumentos-posicionais-variáveis" class="slide level2">
+<h2>Argumentos posicionais variáveis</h2>
+<ul>
+<li class="fragment">Número variável de argumentos posicionais</li>
+<li class="fragment"><strong>*</strong> utilizado antes do nome do argumento</li>
+<li class="fragment">acessado como uma tuple no interior da função</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">def</span> maximo(<span class="op">*</span>n):</a>
+<a class="sourceLine" id="cb17-2" title="2">    m <span class="op">=</span> n[<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb17-3" title="3">    <span class="cf">for</span> num <span class="kw">in</span> n:</a>
+<a class="sourceLine" id="cb17-4" title="4">        <span class="cf">if</span> num <span class="op">&gt;</span> m:</a>
+<a class="sourceLine" id="cb17-5" title="5">            m <span class="op">=</span> num</a>
+<a class="sourceLine" id="cb17-6" title="6">    <span class="cf">return</span> m</a>
+<a class="sourceLine" id="cb17-7" title="7"></a>
+<a class="sourceLine" id="cb17-8" title="8">maximo(<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb17-9" title="9"><span class="co">## 10</span></a></code></pre></div>
+</div>
+</section><section id="argumentos-com-palavras-chave-variáveis" class="slide level2">
+<h2>Argumentos com palavras-chave variáveis</h2>
+<ul>
+<li class="fragment">Número variável de argumentos por palavra-chave</li>
+<li class="fragment"><strong>**</strong> utilizado antes do nome do argumento</li>
+<li class="fragment">acessado como um dicionário no interior da função</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">def</span> func(<span class="op">**</span>kwargs):</a>
+<a class="sourceLine" id="cb18-2" title="2">    <span class="bu">print</span>(kwargs)</a>
+<a class="sourceLine" id="cb18-3" title="3"></a>
+<a class="sourceLine" id="cb18-4" title="4">func(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb18-5" title="5"><span class="co">## {&#39;a&#39;: 1, &#39;b&#39;: 42}</span></a></code></pre></div>
+</div>
+</section><section id="argumentos-passáveis-somente-por-palavras-chave" class="slide level2">
+<h2>Argumentos passáveis somente por palavras-chave</h2>
+<ul>
+<li class="fragment">escritos na declaração após os argumentos posicionais variáveis</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">def</span> chave(<span class="op">\*</span>a, kwo):</a>
+<a class="sourceLine" id="cb19-2" title="2">  <span class="bu">print</span>(kwo)</a>
+<a class="sourceLine" id="cb19-3" title="3"></a>
+<a class="sourceLine" id="cb19-4" title="4">chave(<span class="dv">1</span>, <span class="dv">2</span>) <span class="co"># errado</span></a>
+<a class="sourceLine" id="cb19-5" title="5">chave(kwo<span class="op">=</span><span class="dv">2</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb19-6" title="6"><span class="co">## 2</span></a></code></pre></div>
+</div>
+</section></section>
+<section><section id="módulos-bibliotecas" class="title-slide slide level1"><h1>Módulos (bibliotecas)</h1></section><section id="importação-de-objetos" class="slide level2">
+<h2>Importação de objetos</h2>
+<ul>
+<li class="fragment"><strong>import</strong> importar um módulo mantendo o contexto original</li>
+<li class="fragment"><strong>from</strong> … <strong>import</strong> importar um objeto diretamente para o contexto atual</li>
+<li class="fragment"><strong>*</strong> representa todos os itens de um módulo</li>
+<li class="fragment"><strong>as</strong> alterar o nome de um objeto importado</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" title="1"><span class="im">import</span> meuModulo</a>
+<a class="sourceLine" id="cb20-2" title="2">meuModulo.func()</a>
+<a class="sourceLine" id="cb20-3" title="3"></a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="im">from</span> meuModulo <span class="im">import</span> func</a>
+<a class="sourceLine" id="cb20-5" title="5">func()</a>
+<a class="sourceLine" id="cb20-6" title="6"></a>
+<a class="sourceLine" id="cb20-7" title="7"><span class="im">import</span> meuModulo <span class="im">as</span> modulo</a>
+<a class="sourceLine" id="cb20-8" title="8">modulo.func()</a>
+<a class="sourceLine" id="cb20-9" title="9"></a>
+<a class="sourceLine" id="cb20-10" title="10"><span class="im">from</span> meuModulo <span class="im">import</span> func <span class="im">as</span> nfunc</a>
+<a class="sourceLine" id="cb20-11" title="11">nfunc()</a>
+<a class="sourceLine" id="cb20-12" title="12"></a>
+<a class="sourceLine" id="cb20-13" title="13"><span class="im">from</span> meuModulo <span class="im">import</span> <span class="op">*</span></a>
+<a class="sourceLine" id="cb20-14" title="14">func()</a>
+<a class="sourceLine" id="cb20-15" title="15">func2()</a>
+<a class="sourceLine" id="cb20-16" title="16"><span class="co"># ...</span></a></code></pre></div>
+</section><section id="criação-de-um-módulo" class="slide level2">
+<h2>Criação de um módulo</h2>
+<ul>
+<li class="fragment">uma pasta no mesmo local do programa</li>
+<li class="fragment">conter um arquivo <em>__init__.py</em> (opcional a partir da v. 3.3)</li>
 </ul>
 </section></section>
-<section id="leitura-e-escrita-de-arquivos" class="title-slide slide level1"><h1>Leitura e escrita de arquivos</h1></section>
+<section><section id="leitura-e-escrita-de-arquivos" class="title-slide slide level1"><h1>Leitura e escrita de arquivos</h1></section><section id="modos-de-acesso" class="slide level2">
+<h2>Modos de acesso</h2>
+<ul>
+<li class="fragment"><strong>r</strong> leitura (read)</li>
+<li class="fragment"><strong>w</strong> escrita (write)</li>
+<li class="fragment"><strong>a</strong> escrita ao final (append)</li>
+<li class="fragment"><strong>r+</strong> leitura e escrita</li>
+</ul>
+</section><section id="abertura-de-arquivos" class="slide level2">
+<h2>Abertura de arquivos</h2>
+<ul>
+<li class="fragment"><strong>open</strong> abrir um arquivo; necessários nome do arquivo e modo de acesso</li>
+<li class="fragment"><strong>.close</strong> fecha um arquivo</li>
+<li class="fragment"><strong>with</strong> … <strong>open</strong> <strong>as</strong> cria um contexto para o acesso ao arquivo, o arquivo é fechado ao término do bloco</li>
+<li class="fragment"><strong>.read</strong> retorna o conteúdo inteiro do arquivo ou até um tamanho especificado em bytes</li>
+<li class="fragment"><strong>.readline</strong> retorna uma linha do arquivo</li>
+<li class="fragment"><strong>.write</strong> escreve o conteúdo no arquivo</li>
+<li class="fragment">é possivel iterar pelas linhas de um arquivo através de um <em>for</em></li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" title="1">f <span class="op">=</span> <span class="bu">open</span>(<span class="st">&#39;senha.txt&#39;</span>, <span class="st">&#39;r&#39;</span>)</a>
+<a class="sourceLine" id="cb21-2" title="2">senha <span class="op">=</span> f.read()</a>
+<a class="sourceLine" id="cb21-3" title="3">f.close()</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" title="1"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;senha.txt&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</a>
+<a class="sourceLine" id="cb22-2" title="2">  senha <span class="op">=</span> f.read()</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" title="1"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;redacao.txt&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> r:</a>
+<a class="sourceLine" id="cb23-2" title="2">  <span class="cf">for</span> linha em r:</a>
+<a class="sourceLine" id="cb23-3" title="3">    <span class="bu">print</span>(linha)</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" title="1"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;info.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> info:</a>
+<a class="sourceLine" id="cb24-2" title="2">  info.write(dados_secretos)</a></code></pre></div>
+</section><section id="json" class="slide level2">
+<h2>JSON</h2>
+<ul>
+<li class="fragment"><strong>JSON</strong> JavaScript Object Notation</li>
+<li class="fragment">Forma estruturada de guardar dados</li>
+<li class="fragment">Pode ser facilmente traduzida para um <em>dicionário</em> em Python</li>
+<li class="fragment">módulo <strong>json</strong></li>
+<li class="fragment"><strong>.dump</strong> transcreve um <em>objeto</em> para um <em>arquivo</em></li>
+<li class="fragment"><strong>.load</strong> carrega o conteudo de um arquivo</li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" title="1"><span class="im">import</span> json</a>
+<a class="sourceLine" id="cb25-2" title="2"></a>
+<a class="sourceLine" id="cb25-3" title="3"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;dados.json&#39;</span>, <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</a>
+<a class="sourceLine" id="cb25-4" title="4">  dados <span class="op">=</span> json.load(f)</a>
+<a class="sourceLine" id="cb25-5" title="5"></a>
+<a class="sourceLine" id="cb25-6" title="6"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;copia.json&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</a>
+<a class="sourceLine" id="cb25-7" title="7">  json.dump(dados, f)</a></code></pre></div>
+</section><section class="slide level2">
+
+</section></section>
+<section id="dúvidas" class="title-slide slide level1"><h1>Dúvidas?</h1></section>
     </div>
   </div>
 
