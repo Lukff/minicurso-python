@@ -1,0 +1,9 @@
+# Tratamento de Erros
+
+## Funções anônimas
+
+## Funções úteis
+
+- map
+- zip
+- filter
