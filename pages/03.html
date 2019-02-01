@@ -268,6 +268,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb11-6" title="6"><span class="co">## True</span></a>
 <a class="sourceLine" id="cb11-7" title="7"><span class="bu">isinstance</span>(a, Animal)</a>
 <a class="sourceLine" id="cb11-8" title="8"><span class="co">## True</span></a></code></pre></div>
+</section><section id="getters-e-setters" class="slide level2">
+<h2>Getters e Setters?</h2>
+<ul>
+<li class="fragment"><strong>__</strong> normalmente é utilizado para indicar que uma variável só deve ser usada internamente</li>
+<li class="fragment"><strong>property</strong> permite criar métodos para a obtenção de propriedades</li>
+<li class="fragment"><strong>.setter</strong> permite criar um método para realizar a definição de uma propriedade</li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">class</span> C:</a>
+<a class="sourceLine" id="cb12-2" title="2">    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb12-3" title="3">        <span class="va">self</span>._x <span class="op">=</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb12-4" title="4"></a>
+<a class="sourceLine" id="cb12-5" title="5">    <span class="at">@property</span></a>
+<a class="sourceLine" id="cb12-6" title="6">    <span class="kw">def</span> x(<span class="va">self</span>):</a>
+<a class="sourceLine" id="cb12-7" title="7">        <span class="co">&quot;&quot;&quot;I&#39;m the &#39;x&#39; property.&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb12-8" title="8">        <span class="cf">return</span> <span class="va">self</span>._x</a>
+<a class="sourceLine" id="cb12-9" title="9"></a>
+<a class="sourceLine" id="cb12-10" title="10">    <span class="at">@x.setter</span></a>
+<a class="sourceLine" id="cb12-11" title="11">    <span class="kw">def</span> x(<span class="va">self</span>, value):</a>
+<a class="sourceLine" id="cb12-12" title="12">        <span class="va">self</span>._x <span class="op">=</span> value</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="op">&gt;&gt;&gt;</span> a <span class="op">=</span> C()</a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="op">&gt;&gt;&gt;</span> a.x</a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="op">&gt;&gt;&gt;</span> a.x <span class="op">=</span> <span class="dv">20</span></a>
+<a class="sourceLine" id="cb13-4" title="4"><span class="op">&gt;&gt;&gt;</span> a.x</a>
+<a class="sourceLine" id="cb13-5" title="5"><span class="dv">20</span></a></code></pre></div>
 </section></section>
 <section><section id="tratamento-de-erros" class="title-slide slide level1"><h1>Tratamento de erros</h1></section><section id="capturando-excessões" class="slide level2">
 <h2>Capturando excessões</h2>
@@ -278,20 +304,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section class="slide level2">
 
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" title="1"><span class="cf">while</span> <span class="va">True</span>:</a>
-<a class="sourceLine" id="cb12-2" title="2">    <span class="cf">try</span>:</a>
-<a class="sourceLine" id="cb12-3" title="3">        num <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Insira um número &quot;</span>))</a>
-<a class="sourceLine" id="cb12-4" title="4">    <span class="cf">except</span>:</a>
-<a class="sourceLine" id="cb12-5" title="5">        <span class="bu">print</span>(<span class="st">&quot;Erro: tente novamente&quot;</span>)</a>
-<a class="sourceLine" id="cb12-6" title="6">    <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb12-7" title="7">        <span class="cf">break</span></a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1"><span class="cf">while</span> <span class="va">True</span>:</a>
+<a class="sourceLine" id="cb14-2" title="2">    <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb14-3" title="3">        num <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Insira um número &quot;</span>))</a>
+<a class="sourceLine" id="cb14-4" title="4">    <span class="cf">except</span>:</a>
+<a class="sourceLine" id="cb14-5" title="5">        <span class="bu">print</span>(<span class="st">&quot;Erro: tente novamente&quot;</span>)</a>
+<a class="sourceLine" id="cb14-6" title="6">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb14-7" title="7">        <span class="cf">break</span></a></code></pre></div>
 <div class="fragment">
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="cf">try</span>:</a>
-<a class="sourceLine" id="cb13-2" title="2">    <span class="bu">print</span>(<span class="dv">2</span><span class="op">/</span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb13-3" title="3"><span class="cf">except</span> <span class="pp">ZeroDivisionError</span> <span class="im">as</span> zde:</a>
-<a class="sourceLine" id="cb13-4" title="4">    <span class="bu">print</span>(zde)</a>
-<a class="sourceLine" id="cb13-5" title="5"></a>
-<a class="sourceLine" id="cb13-6" title="6"><span class="co">## division by zero</span></a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb15-2" title="2">    <span class="bu">print</span>(<span class="dv">2</span><span class="op">/</span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="cf">except</span> <span class="pp">ZeroDivisionError</span> <span class="im">as</span> zde:</a>
+<a class="sourceLine" id="cb15-4" title="4">    <span class="bu">print</span>(zde)</a>
+<a class="sourceLine" id="cb15-5" title="5"></a>
+<a class="sourceLine" id="cb15-6" title="6"><span class="co">## division by zero</span></a></code></pre></div>
 </div>
 </section><section id="disparando-excessões" class="slide level2">
 <h2>Disparando excessões</h2>
@@ -301,24 +327,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section><section class="slide level2">
 
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1">nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Qual seu nome? &#39;</span>)</a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="cf">if</span> (nome <span class="op">==</span> <span class="st">&#39;&#39;</span>):</a>
-<a class="sourceLine" id="cb14-3" title="3">    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">&#39;nome não pode ser vazio&#39;</span>)</a>
-<a class="sourceLine" id="cb14-4" title="4"></a>
-<a class="sourceLine" id="cb14-5" title="5"><span class="co">#Traceback (most recent call last):</span></a>
-<a class="sourceLine" id="cb14-6" title="6"><span class="co">#  File &quot;&lt;pyshell#148&gt;&quot;, line 2, in &lt;module&gt;</span></a>
-<a class="sourceLine" id="cb14-7" title="7"><span class="co">#    raise Exception(&#39;nome não pode ser vazio&#39;)</span></a>
-<a class="sourceLine" id="cb14-8" title="8"><span class="co">#Exception: nome não pode ser vazio</span></a></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">class</span> ErroDeNomeVazio(<span class="pp">Exception</span>):</a>
-<a class="sourceLine" id="cb15-2" title="2">    <span class="cf">pass</span></a>
-<a class="sourceLine" id="cb15-3" title="3"></a>
-<a class="sourceLine" id="cb15-4" title="4"><span class="cf">if</span> (nome <span class="op">==</span> <span class="st">&#39;&#39;</span>):</a>
-<a class="sourceLine" id="cb15-5" title="5">    <span class="cf">raise</span> ErroDeNomeVazio(<span class="st">&#39;nome não pode ser vazio&#39;</span>)</a>
-<a class="sourceLine" id="cb15-6" title="6"></a>
-<a class="sourceLine" id="cb15-7" title="7"><span class="co">#Traceback (most recent call last):</span></a>
-<a class="sourceLine" id="cb15-8" title="8"><span class="co">#  File &quot;&lt;pyshell#154&gt;&quot;, line 2, in &lt;module&gt;</span></a>
-<a class="sourceLine" id="cb15-9" title="9"><span class="co">#    raise ErroDeNomeVazio(&#39;nome não pode ser vazio&#39;)</span></a>
-<a class="sourceLine" id="cb15-10" title="10"><span class="co">#ErroDeNomeVazio: nome não pode ser vazio</span></a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1">nome <span class="op">=</span> <span class="bu">input</span>(<span class="st">&#39;Qual seu nome? &#39;</span>)</a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="cf">if</span> (nome <span class="op">==</span> <span class="st">&#39;&#39;</span>):</a>
+<a class="sourceLine" id="cb16-3" title="3">    <span class="cf">raise</span> <span class="pp">Exception</span>(<span class="st">&#39;nome não pode ser vazio&#39;</span>)</a>
+<a class="sourceLine" id="cb16-4" title="4"></a>
+<a class="sourceLine" id="cb16-5" title="5"><span class="co">#Traceback (most recent call last):</span></a>
+<a class="sourceLine" id="cb16-6" title="6"><span class="co">#  File &quot;&lt;pyshell#148&gt;&quot;, line 2, in &lt;module&gt;</span></a>
+<a class="sourceLine" id="cb16-7" title="7"><span class="co">#    raise Exception(&#39;nome não pode ser vazio&#39;)</span></a>
+<a class="sourceLine" id="cb16-8" title="8"><span class="co">#Exception: nome não pode ser vazio</span></a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">class</span> ErroDeNomeVazio(<span class="pp">Exception</span>):</a>
+<a class="sourceLine" id="cb17-2" title="2">    <span class="cf">pass</span></a>
+<a class="sourceLine" id="cb17-3" title="3"></a>
+<a class="sourceLine" id="cb17-4" title="4"><span class="cf">if</span> (nome <span class="op">==</span> <span class="st">&#39;&#39;</span>):</a>
+<a class="sourceLine" id="cb17-5" title="5">    <span class="cf">raise</span> ErroDeNomeVazio(<span class="st">&#39;nome não pode ser vazio&#39;</span>)</a>
+<a class="sourceLine" id="cb17-6" title="6"></a>
+<a class="sourceLine" id="cb17-7" title="7"><span class="co">#Traceback (most recent call last):</span></a>
+<a class="sourceLine" id="cb17-8" title="8"><span class="co">#  File &quot;&lt;pyshell#154&gt;&quot;, line 2, in &lt;module&gt;</span></a>
+<a class="sourceLine" id="cb17-9" title="9"><span class="co">#    raise ErroDeNomeVazio(&#39;nome não pode ser vazio&#39;)</span></a>
+<a class="sourceLine" id="cb17-10" title="10"><span class="co">#ErroDeNomeVazio: nome não pode ser vazio</span></a></code></pre></div>
 </section></section>
 <section id="dúvidas" class="title-slide slide level1"><h1>Dúvidas?</h1></section>
     </div>
